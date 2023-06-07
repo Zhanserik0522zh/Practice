@@ -1,27 +1,18 @@
 ﻿#include <iostream>
+
 using namespace std;
-int fibonacci(int n) {
-    if (n <= 1)
-        return n;
 
-    int prev = 0;
-    int curr = 1;
-
-    for (int i = 2; i <= n; i++) {
-        int temp = curr;
-        curr = prev + curr;
-        prev = temp;
-    }
-
-    return curr;
+int fb(int a) {
+    if (a == 0)
+        return 0;
+    if (a == 1 || a == 2)
+        return 1;
+    return fb(a - 1) + fb(a - 2);
 }
 
 int main() {
-    int n;
-    cout << "Enter the value of n: ";
-    cin >> n;
-
-    cout << "The " << n << "th Fibonacci number is: " << fibonacci(n) << endl;
-
+    int a;
+    cin >> a;
+    cout << fb(a);
     return 0;
 }
